@@ -2,10 +2,11 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>Embed Soundcloud clip</title>
-<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<script src="js/libs/jquery-2.1.3.min.js"></script>
-<script src="js/libs/d3.min.js"></script>
+<title>Summer sound</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></script>
 <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
 <style>
@@ -18,6 +19,7 @@
 
 <div id='map'></div>
 
+// Example from Mapbox
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoibWFyaWFjcm9zYXMiLCJhIjoiY2lremc0MnoxMDA3MXd4bTR6dWUyNGw0ZSJ9.9Bk_-nnYE7Xqaz1OXH2fFA';
 
@@ -32,7 +34,7 @@ var geoJson = [{
         properties: {
             title: 'Eastside, Birmingham',
             'marker-color': '#f00',
-            'marker-size': 'large',
+            'marker-size': 'medium',
             'marker-symbol': 'music',
             url: 'https://www.instagram.com/p/BJENHYjAAkA/',
             sounds: 'Odissea - Els Catarres <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/7140d9d34536abd6322b561648009cedbe7c342c" type="audio/mpeg"></iframe>'
@@ -49,7 +51,7 @@ var geoJson = [{
         properties: {
             title: 'Girona, City Centre',
             'marker-color': '#f00',
-            'marker-size': 'large',
+            'marker-size': 'medium',
             'marker-symbol': 'music',
             url: 'https://www.instagram.com/p/BI5xOefg1iE/',
             sounds: 'Friday I am in love - Janet Devlin <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/65e9e4cb57ba21ee0bc73bd5bcdc3a58d3e00e8d" type="audio/mpeg"></iframe>'
@@ -65,7 +67,7 @@ var geoJson = [{
       properties: {
           title: 'Palafrugell, Girona',
           'marker-color': '#f00',
-          'marker-size': 'large',
+          'marker-size': 'medium',
           'marker-symbol': 'music',
           url: 'https://www.instagram.com/p/BI4jj5Zgixn/',
           sounds: 'Sota la llum del sol - Els Catarres <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/8f1b4f9e45174c865c69df9b0bf327fc12f8a2e2" type="audio/mpeg"></iframe>'
@@ -81,7 +83,7 @@ var geoJson = [{
     properties: {
         title: 'Eastside, Birmingham',
         'marker-color': '#f00',
-        'marker-size': 'large',
+        'marker-size': 'medium',
         'marker-symbol': 'music',
         url: 'https://www.instagram.com/p/BI5xOefg1iE/',
         sounds: 'Junts - Projecte Mut <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/b9f387f73620c48a4286609237d7dc01c15220e0" type="audio/mpeg"></iframe>'
@@ -97,7 +99,7 @@ var geoJson = [{
   properties: {
       title: 'Edgbaston Reservoir, Birmingham',
       'marker-color': '#f00',
-      'marker-size': 'large',
+      'marker-size': 'medium',
       'marker-symbol': 'music',
       url: 'https://www.instagram.com/p/BI5xOefg1iE/',
       sounds: 'Do not stop believin - Journey <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/5908f4536c2b1111045c46555811fe61112d5c26" type="audio/mpeg"></iframe>'
@@ -113,7 +115,7 @@ type: 'Feature',
 properties: {
     title: 'Cathedral Square, Birmingham',
     'marker-color': '#f00',
-    'marker-size': 'large',
+    'marker-size': 'medium',
     'marker-symbol': 'music',
     url: 'https://www.instagram.com/p/BI5xOefg1iE/',
     sounds: 'L.I.F.E.G.O.E.S.O.N. - Noah and the Whale <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/ccbc5eb6dbd565c783cf6b9273d0d337c234474f" type="audio/mpeg"></iframe>'
@@ -129,7 +131,7 @@ type: 'Feature',
 properties: {
     title: 'Birmingham Canals',
     'marker-color': '#f00',
-    'marker-size': 'large',
+    'marker-size': 'medium',
     'marker-symbol': 'music',
     url: 'https://www.instagram.com/p/BI5xOefg1iE/',
     sounds: '5 Years Time - Noah and the Whale <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/1f97d1a75cacb29fa67c6c8ff1bb3dd097592742" type="audio/mpeg"></iframe>'
@@ -145,7 +147,7 @@ type: 'Feature',
 properties: {
     title: 'Birmingham Canals',
     'marker-color': '#f00',
-    'marker-size': 'large',
+    'marker-size': 'medium',
     'marker-symbol': 'music',
     url: 'https://www.instagram.com/p/BI5xOefg1iE/',
     sounds: 'Blowin in the Wind - Bob Dylan <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/fc1dd43539f9fbdaa17a4b012d61d50864e6f1fa" type="audio/mpeg"></iframe>'
@@ -161,7 +163,7 @@ type: 'Feature',
 properties: {
     title: 'Barcelona, City Centre',
     'marker-color': '#f00',
-    'marker-size': 'large',
+    'marker-size': 'medium',
     'marker-symbol': 'music',
     url: 'https://www.instagram.com/p/BI5xOefg1iE/',
     sounds: 'Temptacions de Collserola - Manel <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/b6b4ee7cf25089bc80b908e33232eaf205b195d2" type="audio/mpeg"></iframe>'
@@ -177,7 +179,7 @@ type: 'Feature',
 properties: {
     title: 'Digbeth, Birmingham',
     'marker-color': '#f00',
-    'marker-size': 'large',
+    'marker-size': 'medium',
     'marker-symbol': 'music',
     url: 'https://www.instagram.com/p/BI5xOefg1iE/',
     sounds: 'Lets Have a Party Tonight - Wanda Jackson <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/aaf0d8348e672f4e15870ac1866fc066fd49b0ec" type="audio/mpeg"></iframe>'
@@ -193,7 +195,7 @@ type: 'Feature',
 properties: {
     title: 'Eastside, Birmingham',
     'marker-color': '#f00',
-    'marker-size': 'large',
+    'marker-size': 'medium',
     'marker-symbol': 'music',
     url: 'https://www.instagram.com/p/BI5xOefg1iE/',
     sounds: 'Common People - The Pulp <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/12ee216b0cee407d7271695cc83270d7ab872919" type="audio/mpeg"></iframe>'
@@ -209,7 +211,7 @@ type: 'Feature',
 properties: {
     title: 'Grand Central, Birmingham',
     'marker-color': '#f00',
-    'marker-size': 'large',
+    'marker-size': 'medium',
     'marker-symbol': 'music',
     url: 'https://www.instagram.com/p/BI5xOefg1iE/',
     sounds: 'BBVA - Manel <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/320b0effa4489f12a8367e3167a0a02985def453" type="audio/mpeg"></iframe>'
@@ -225,7 +227,7 @@ type: 'Feature',
 properties: {
     title: 'Eastside, Birmingham',
     'marker-color': '#f00',
-    'marker-size': 'large',
+    'marker-size': 'medium',
     'marker-symbol': 'music',
     url: 'https://www.instagram.com/p/BI5xOefg1iE/',
     sounds: 'Last Nite - The Strokes <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/dd2111a218b3007e3e23a6be300a87f02aee045a" type="audio/mpeg"></iframe>'
@@ -241,7 +243,7 @@ type: 'Feature',
 properties: {
     title: 'Birmingham',
     'marker-color': '#f00',
-    'marker-size': 'large',
+    'marker-size': 'medium',
     'marker-symbol': 'music',
     url: 'https://www.instagram.com/p/BI5xOefg1iE/',
     sounds: 'Home - Max Jury <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/1a8ef5df2f673db5b14d9af606fb318a964f4210" type="audio/mpeg"></iframe>'
@@ -257,7 +259,7 @@ type: 'Feature',
 properties: {
     title: 'Plaça Catalunya, Barcelona',
     'marker-color': '#f00',
-    'marker-size': 'large',
+    'marker-size': 'medium',
     'marker-symbol': 'music',
     url: 'https://www.instagram.com/p/BI5xOefg1iE/',
     sounds: 'Summertime - The Mogwlis <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/f1d83f9ed0eb7f5595a1770505034ef0e7369109" type="audio/mpeg"></iframe>'
@@ -273,7 +275,7 @@ type: 'Feature',
 properties: {
     title: 'Tossa de Mar, Girona',
     'marker-color': '#f00',
-    'marker-size': 'large',
+    'marker-size': 'medium',
     'marker-symbol': 'music',
     url: 'https://www.instagram.com/p/BI5xOefg1iE/',
     sounds: 'La Gent Normal - Manel versioning The Pulp - Common People <iframe width="100%" height="50" scrolling="no" frameborder="no" src="https://p.scdn.co/mp3-preview/12ee216b0cee407d7271695cc83270d7ab872919" type="audio/mpeg"></iframe>'
@@ -307,10 +309,7 @@ myLayer.on('layeradd', function(e) {
 
 // Add features to the map
 myLayer.setGeoJSON(geoJson);
-
-
 </script>
-
 
 </body>
 </html>
